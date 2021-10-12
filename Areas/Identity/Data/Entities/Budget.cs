@@ -5,18 +5,15 @@ using System.Threading.Tasks;
 
 namespace JohannasBaksida.Areas.Identity.Data.Entities
 {
-    public class Budget
+    public class Budget : Entity
     {
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public decimal Income { get; set; }
+        public decimal Housing { get; set; }
+        public decimal Vehicle { get; set; }
+        public decimal Unbudgeted { get; set; }
     }
 
-    public class VariableCostsCategories
-    {
-
-    }
-
-    public class FixedCostsCategories
-    {
-
-    }
- 
+    
 }

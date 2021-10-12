@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 
 namespace JohannasBaksida.Areas.Identity.Data.Entities
 {
-    public class Purchase
+    public class Purchase : Entity
     {
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public DateTime Date { get; set; }
     }
 }

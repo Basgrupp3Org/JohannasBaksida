@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace JohannasBaksida.Areas.Identity.Data.Entities
 {
-    public class SavingGoal
+    public class SavingGoal : Entity
     {
-        [Key]
-        public Guid Id { get; set; }
 
         public virtual JohannasBaksidaUser User { get; set; }
     }
