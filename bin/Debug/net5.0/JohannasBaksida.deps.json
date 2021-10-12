@@ -4231,7 +4231,7 @@
     "System.Drawing.Common/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XKSPuWIvvpx8Uuk5Aoea9zDDVrsna2VXDXdPh4bFnXXmrZk84q9Hf5YRqOl5Z8Ejc6/QqMuKnx1uY1BdpL7TNA==",
+      "sha512": "sha512-v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
       "path": "system.drawing.common/4.7.0",
       "hashPath": "system.drawing.common.4.7.0.nupkg.sha512"
     },

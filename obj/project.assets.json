@@ -4870,7 +4870,7 @@
       ]
     },
     "System.Drawing.Common/4.7.0": {
-      "sha512": "XKSPuWIvvpx8Uuk5Aoea9zDDVrsna2VXDXdPh4bFnXXmrZk84q9Hf5YRqOl5Z8Ejc6/QqMuKnx1uY1BdpL7TNA==",
+      "sha512": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
       "type": "package",
       "path": "system.drawing.common/4.7.0",
       "files": [
@@ -7594,27 +7594,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kardo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Conny Johansson\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kardo\\source\\repos\\JohannasBaksida\\JohannasBaksida.csproj",
+      "projectUniqueName": "C:\\Users\\Conny Johansson\\source\\repos\\JohannasBaksida\\JohannasBaksida.csproj",
       "projectName": "JohannasBaksida",
-      "projectPath": "C:\\Users\\kardo\\source\\repos\\JohannasBaksida\\JohannasBaksida.csproj",
-      "packagesPath": "C:\\Users\\kardo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kardo\\source\\repos\\JohannasBaksida\\obj\\",
+      "projectPath": "C:\\Users\\Conny Johansson\\source\\repos\\JohannasBaksida\\JohannasBaksida.csproj",
+      "packagesPath": "C:\\Users\\Conny Johansson\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Conny Johansson\\source\\repos\\JohannasBaksida\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\kardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Conny Johansson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7690,7 +7683,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

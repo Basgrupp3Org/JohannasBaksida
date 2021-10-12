@@ -5,13 +5,15 @@ using System.Threading.Tasks;
 
 namespace JohannasBaksida.Areas.Identity.Data.Entities
 {
-    public class Balance
+    public class Balance : Entity
     {
-        public virtual ICollection<BalanceChanged> BalanceChagnes { get; set; }
+        public virtual ICollection<BalanceChanged> BalanceChanges { get; set; }
     }
 
-    public class BalanceChanged
+    public class BalanceChanged : Entity
     {
-
+        public decimal OldSum { get; set; }
+        public decimal NewSum { get; set; }
+        public DateTime Date { get; set; }
     }
 }
