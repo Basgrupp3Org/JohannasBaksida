@@ -4,14 +4,16 @@ using JohannasBaksida.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JohannasBaksida.Migrations
 {
     [DbContext(typeof(JohannasBaksidaContext))]
-    partial class JohannasBaksidaContextModelSnapshot : ModelSnapshot
+    [Migration("20211013085448_budget")]
+    partial class budget
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

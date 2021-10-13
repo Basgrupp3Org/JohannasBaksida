@@ -4,14 +4,16 @@ using JohannasBaksida.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JohannasBaksida.Migrations
 {
     [DbContext(typeof(JohannasBaksidaContext))]
-    partial class JohannasBaksidaContextModelSnapshot : ModelSnapshot
+    [Migration("20211013082736_fixedcostandvariablecostchanges")]
+    partial class fixedcostandvariablecostchanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,23 +85,54 @@ namespace JohannasBaksida.Migrations
                     b.Property<decimal>("Income")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("JohannasBaksidaUserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("Unbudgeted")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<decimal>("Vehicle")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("JohannasBaksidaUserId");
+                    b.HasIndex("UserId");
 
-                    b.ToTable("Budgets");
+                    b.ToTable("Budget");
+                });
+
+            modelBuilder.Entity("JohannasBaksida.Areas.Identity.Data.Entities.BudgetCategory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("BudgetId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("FixedCostsCategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid?>("VariableCostsCategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BudgetId");
+
+                    b.HasIndex("FixedCostsCategoryId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("VariableCostsCategoryId");
+
+                    b.ToTable("BudgetCategory");
                 });
 
             modelBuilder.Entity("JohannasBaksida.Areas.Identity.Data.Entities.FixedCostsCategories", b =>
@@ -425,9 +458,38 @@ namespace JohannasBaksida.Migrations
 
             modelBuilder.Entity("JohannasBaksida.Areas.Identity.Data.Entities.Budget", b =>
                 {
-                    b.HasOne("JohannasBaksida.Areas.Identity.Data.JohannasBaksidaUser", null)
+                    b.HasOne("JohannasBaksida.Areas.Identity.Data.JohannasBaksidaUser", "User")
                         .WithMany("Budgets")
-                        .HasForeignKey("JohannasBaksidaUserId");
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("JohannasBaksida.Areas.Identity.Data.Entities.BudgetCategory", b =>
+                {
+                    b.HasOne("JohannasBaksida.Areas.Identity.Data.Entities.Budget", "Budget")
+                        .WithMany("BudgetCategory")
+                        .HasForeignKey("BudgetId");
+
+                    b.HasOne("JohannasBaksida.Areas.Identity.Data.Entities.FixedCostsCategories", "FixedCostsCategory")
+                        .WithMany()
+                        .HasForeignKey("FixedCostsCategoryId");
+
+                    b.HasOne("JohannasBaksida.Areas.Identity.Data.JohannasBaksidaUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.HasOne("JohannasBaksida.Areas.Identity.Data.Entities.VariableCostsCategories", "VariableCostsCategory")
+                        .WithMany()
+                        .HasForeignKey("VariableCostsCategoryId");
+
+                    b.Navigation("Budget");
+
+                    b.Navigation("FixedCostsCategory");
+
+                    b.Navigation("User");
+
+                    b.Navigation("VariableCostsCategory");
                 });
 
             modelBuilder.Entity("JohannasBaksida.Areas.Identity.Data.Entities.FixedCostsCategories", b =>
@@ -514,6 +576,11 @@ namespace JohannasBaksida.Migrations
             modelBuilder.Entity("JohannasBaksida.Areas.Identity.Data.Entities.Balance", b =>
                 {
                     b.Navigation("BalanceChanges");
+                });
+
+            modelBuilder.Entity("JohannasBaksida.Areas.Identity.Data.Entities.Budget", b =>
+                {
+                    b.Navigation("BudgetCategory");
                 });
 
             modelBuilder.Entity("JohannasBaksida.Areas.Identity.Data.JohannasBaksidaUser", b =>
