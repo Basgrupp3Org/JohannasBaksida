@@ -20,10 +20,10 @@ namespace JohannasBaksida.Areas.Identity.Data.Entities
         public string Name { get; set; }
         public decimal ToSpend { get; set; }
         public decimal Spent { get; set; }
-        public Budget Budget { get; set; }
-        public virtual ICollection<BudgetCategory> BudgetCategories { get; set; }
-        public virtual ICollection<Purchase> Purchases { get; set; }
-        public virtual JohannasBaksidaUser User { get; set; }
+        //public Budget Budget { get; set; }
+        //public virtual ICollection<BudgetCategory> BudgetCategories { get; set; }
+        //public virtual ICollection<Purchase> Purchases { get; set; }
+        //public virtual JohannasBaksidaUser User { get; set; }
 
     }
 
@@ -32,8 +32,8 @@ namespace JohannasBaksida.Areas.Identity.Data.Entities
         public string Name { get; set; }
         public decimal Sum { get; set; }
         public decimal Cost { get; set; }
-        public virtual JohannasBaksidaUser User { get; set; }
-        public virtual ICollection<BudgetCategory> BudgetCategory { get; set; }
+        //public virtual JohannasBaksidaUser User { get; set; }
+        //public virtual ICollection<BudgetCategory> BudgetCategory { get; set; }
 
     }
 }

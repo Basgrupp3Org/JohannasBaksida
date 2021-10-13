@@ -38,7 +38,9 @@ namespace JohannasBaksida
             });
             services.AddDbContext<JohannasBaksidaContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("JohannasBaksidaContextConnection")));
             services.AddTransient<IPurchaseManager, PurchaseManager>();
-            
+            services.AddTransient<ICategoryManager, CategoryManager>();
+            services.AddTransient<IBudgetManager, BudgetManager>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

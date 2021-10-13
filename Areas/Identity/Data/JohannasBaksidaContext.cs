@@ -42,5 +42,8 @@ namespace JohannasBaksida.Data
         //    optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=JohannasBaksidaDB");
         //}
         public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<FixedCostsCategories> FixedCostsCategories { get; set; }
+        public DbSet<VariableCostsCategories> VariableCostsCategories { get; set; }
+        public DbSet<Budget> Budgets { get; set; }
     }
 }

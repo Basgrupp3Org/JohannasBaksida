@@ -13,8 +13,8 @@ namespace JohannasBaksida.Areas.Identity.Data.Entities
         public decimal Housing { get; set; }
         public decimal Vehicle { get; set; }
         public decimal Unbudgeted { get; set; }
-        public virtual JohannasBaksidaUser User { get; set; }
-        public virtual ICollection<BudgetCategory> BudgetCategory { get; set; }
+        //public virtual JohannasBaksidaUser User { get; set; }
+        //public virtual ICollection<BudgetCategory> BudgetCategory { get; set; }
     }
 
     
