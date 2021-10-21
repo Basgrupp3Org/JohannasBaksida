@@ -1,4 +1,5 @@
 ﻿using JohannasBaksida.Areas.Identity.Data.Entities;
+using JohannasBaksida.Areas.Identity.Data.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,9 @@ namespace JohannasBaksida.Infrastructure.Abstract
         void Post(VariableCostsCategories variableCostsCategories);
 
         void Post(FixedCostsCategories fixedCostsCategories);
+
+        void Edit(EditVariableCostCategoryDTO variableCostCategory);
+        
+        void Edit(EditFixedCostCategoryDTO fixedCostCategory);
     }
 }

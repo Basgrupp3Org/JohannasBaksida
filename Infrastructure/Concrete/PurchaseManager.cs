@@ -1,4 +1,5 @@
 ﻿using JohannasBaksida.Areas.Identity.Data.Entities;
+using JohannasBaksida.Areas.Identity.Data.Web;
 using JohannasBaksida.Data;
 using JohannasBaksida.Infrastructure.Abstract;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +38,19 @@ namespace JohannasBaksida.Infrastructure.Concrete
             _context.Purchases.Add(purchase);
             //using (var db = _context) ;
             _context.SaveChanges();
+        }
+
+        public void Edit(EditPurchaseDTO purchase)
+        {
+            var foundPurchase = _context.Purchases.Where(x => x.Id == purchase.Id).FirstOrDefault();
+            if (foundPurchase != null)
+            {
+                foundPurchase.Name = purchase.Name;
+                foundPurchase.Price = purchase.Price;
+                foundPurchase.Date = purchase.Date;
+
+                _context.SaveChanges();
+            }
         }
     }
 }

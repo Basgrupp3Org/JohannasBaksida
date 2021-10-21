@@ -1,4 +1,5 @@
 ﻿using JohannasBaksida.Areas.Identity.Data.Entities;
+using JohannasBaksida.Areas.Identity.Data.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace JohannasBaksida.Infrastructure.Abstract
    public interface IPurchaseManager
     {
          void Post(Purchase purchase);
+        void Edit(EditPurchaseDTO purchase);
     }
 }

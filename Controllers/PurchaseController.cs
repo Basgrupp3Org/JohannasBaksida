@@ -1,5 +1,6 @@
 ﻿using JohannasBaksida.Areas.Identity.Data.Entities;
 using JohannasBaksida.Areas.Identity.Data.Managers;
+using JohannasBaksida.Areas.Identity.Data.Web;
 using JohannasBaksida.Data;
 using JohannasBaksida.Infrastructure.Abstract;
 using JohannasBaksida.Infrastructure.Concrete;
@@ -23,12 +24,19 @@ namespace JohannasBaksida.Controllers
             _manager = manager;
         }
 
-       
 
+        [Route("/PurchasePost")]
         [HttpPost]
         public void Post([FromBody] Purchase purchase)
         {
             _manager.Post(purchase);
+        }
+
+        [Route("/PurchaseEdit")]
+        [HttpPost]
+        public void Edit([FromBody] EditPurchaseDTO purchase)
+        {
+            _manager.Edit(purchase);
         }
     }
 }

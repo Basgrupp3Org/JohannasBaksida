@@ -1,4 +1,5 @@
 ﻿using JohannasBaksida.Areas.Identity.Data.Entities;
+using JohannasBaksida.Areas.Identity.Data.Web;
 using JohannasBaksida.Infrastructure.Abstract;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,10 +18,18 @@ namespace JohannasBaksida.Controllers
 
         public BudgetController(IBudgetManager manager) => _manager = manager;
 
+        [Route("/BudgetPost")]
         [HttpPost]
         public void Post([FromBody] Budget budget)
         {
             _manager.Post(budget);
+        }
+
+        [Route("/BudgetEdit")]
+        [HttpPost]
+        public void Edit([FromBody] EditBudgetDTO budget)
+        {
+            _manager.Edit(budget);
         }
     }
 }
